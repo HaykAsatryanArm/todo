@@ -1,0 +1,20 @@
+.hide {
+   width: 100%;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   margin-bottom: 50px;
+   & .checkbox {
+      accent-color: #008594;
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      min-height: 18px;
+   }
+   & .text {
+      color: #000000;
+      font-size: 18px;
+      font-weight: 500;
+      margin-left: 15px;
+   }
+}
