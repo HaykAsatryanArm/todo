@@ -7,12 +7,6 @@ const App = () => {
    const [todos, setTodos] = useState(JSON.parse(sessionStorage.getItem('todos')))
    const [hidden, setHidden] = useState(false)
    const [completed, setCompleted] = useState([])
-
-   // useEffect(() => {
-   //    if (sessionStorage.getItem('todos') != null) {
-   //       setTodos(JSON.parse(sessionStorage.getItem('todos')));
-   //    }
-   // }, [])
    
    useEffect(() => {
       sessionStorage.setItem('todos', JSON.stringify(todos))
