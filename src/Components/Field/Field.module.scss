@@ -1,0 +1,102 @@
+.field {
+   width: 100%;
+   & .name {
+      font-size: 18px;
+      font-weight: 400;
+      color: #174348;
+   }
+   & .content {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      & .inputContent {
+         width: calc(100% - 124px);
+         display: flex;
+         flex-direction: column;
+         position: relative;
+         & .input {
+            width: 100%;
+            height: 52px;
+            border: 2px solid #FFCD04;
+            border-radius: 4px;
+            padding: 0 44px 0 16px;
+            outline: none;
+            font-weight: 400;
+            font-size: 18px;
+            &.active {
+               border-color: #FF3104;
+            }
+            &::placeholder {
+               color: #DFDFDF;
+            }
+            @media (max-width: 611px) {
+               & {
+                  height: 44px;
+               }
+            }
+         }
+         & .clear {
+            position: absolute;
+            z-index: 5;
+            right: 0;
+            top: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-size: 32px;
+            margin-right: 8px;
+            opacity: 0;
+            color: #174348;
+            &.active {
+               opacity: 1;
+               cursor: pointer;
+            }
+         }
+         & .error {
+            position: absolute;
+            width: 100%;
+            top: 100%;
+            font-size: 12px;
+            font-weight: 400;
+            color: #FF3104;
+            opacity: 0;
+            visibility: hidden;
+            &.active {
+               opacity: 1;
+               visibility: visible;
+            }
+         }
+      }
+      & .button {
+         width: 100px;
+         height: 52px;
+         border-radius: 4px;
+         background: #008594;
+         border: none;
+         outline: none;
+         cursor: pointer;
+         color: #ffffff;
+         font-size: 18px;
+         font-weight: 500;
+         @media (max-width: 611px) {
+            & {
+               width: 92px;
+               height: 44px;
+               font-size: 16px;
+               margin-top: 20px;
+            }
+         }
+      }
+      @media (max-width: 611px) {
+         & {
+            flex-direction: column;
+            align-items: flex-end;
+            & .inputContent {
+               width: 100%;
+            }
+         }
+      }
+   }
+}

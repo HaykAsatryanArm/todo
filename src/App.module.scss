@@ -1,0 +1,14 @@
+.container {
+   width: 100vw;
+   padding: 0 80px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   & .wrapper {
+      max-width: 1156px;
+      width: 100%;
+   }
+   @media (max-width: 611px) {
+      padding: 0 24px;
+   }
+}
