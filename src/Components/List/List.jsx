@@ -7,20 +7,21 @@ const List = ({ hidden, setTodos, todos, completed }) => {
    const [popup, setPopup] = useState(false)
    const [id, setId] = useState(null)
 
+
    const popupFunc = id => {
       setId(id)
       setPopup(true)
    }
 
    const deleteTodo = id => {
-      setTodos(todos.filter(todo => todo.id != id))
+      setTodos(todos.filter(todo => todo.id !== id))
       setPopup(false)
    }
 
    const toggleTodo = id => {
       let result = []
       todos.forEach(todo => {
-         if (todo.id == id) {
+         if (todo.id === id) {
             todo.done = !todo.done
          }
          result.push(todo)
@@ -31,7 +32,7 @@ const List = ({ hidden, setTodos, todos, completed }) => {
    return (
       <div className={styles.list}>
          <div className={`${styles.overlay} ${popup ? styles.active : ''}`} onClick={(e) => {
-            if (!(e.target.parentNode.parentNode.id == 'popup' || e.target.parentNode.id == 'popup' || e.target.id == 'popup') || e.target.id == 'cancel') {
+            if (!(e.target.parentNode.parentNode.id === 'popup' || e.target.parentNode.id === 'popup' || e.target.id === 'popup') || e.target.id === 'cancel') {
                setPopup(false)
             }
          }}>
